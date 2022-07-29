@@ -1,0 +1,181 @@
+$font-main: 'Montserrat', sans-serif;
+$color-main: #7D7D7D;
+$color-white: #ffffff;
+$color-green: #47B200;
+$color-red: #B61426;
+$color-gray: #5A5D5A;
+$color-gray-light: #ECECEC;
+$color-black: #000000;
+$color-yellow: #FFCD1E;
+
+
+
+html,
+body {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  outline: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  font-family: $font-main;
+  font-weight: 400;
+  font-size: 14px;
+  color: $color-main;
+}
+
+.container {
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.main {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 58px 0 124px;
+}
+
+.section-title {
+  margin-top: 32px;
+  margin-bottom: 16px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: $color-green;
+}
+
+.btn {
+  padding: 16px 10px;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 11px;
+  text-transform: uppercase;
+  color: $color-white;
+  background-color: $color-green;
+  border-radius: 8px;
+  border: none;
+
+  &__submit {
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+    padding: 13px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+.slide-btn {
+  position: relative;
+  display: block;
+  min-width: 48px;
+  max-width: 48px;
+  height: 16px;
+  margin-top: 4px;
+  margin-left: 30px;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid #ADFF99;
+  transition: all linear 0.2s;
+
+  &__circle {
+    position: absolute;
+    top: -5px;
+    left: -1px;
+    width: 24px;
+    height: 24px;
+    background-color: $color-green;
+    border-radius: 50%;
+    transition: all linear 0.2s;
+  }
+}
+
+.slide-btn__input:checked~.slide-btn {
+  background-color: #ADFF99;
+
+  & .slide-btn__circle {
+    left: calc(100% - 23px);
+  }
+}
+
+.input {
+  width: 100%;
+  height: 44px;
+  padding: 11px 16px;
+  font-size: 16px;
+  line-height: 21px;
+  color: #7C756B;
+  background-color: transparent;
+  border: 1px solid $color-green;
+  border-radius: 8px;
+
+  &.error {
+    border: 1px solid $color-red;
+  }
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 24px;
+  padding-right: 10px;
+  background-color: transparent;
+  border: none;
+
+  svg {
+    height: 13px;
+  }
+
+  &+.section-title {
+    margin-top: 16px;
+  }
+}
+
+.hidden {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+
+  & * {
+    border: none;
+  }
+
+  &__input {
+    background-color: transparent;
+  }
+
+  &__minus svg {
+    width: 4px;
+  }
+
+  &__plus svg {
+    width: 6px;
+  }
+}

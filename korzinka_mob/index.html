@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/style.min.css">
+
+  <title>title</title>
+</head>
+
+<body>
+  <main class="main">
+    <!-- конец шапки -->
+
+<section class="container">
+  <a href="/bonus.html" class="bonus-card">
+    <img src="img/logo.png" alt="" class="bonus-card__logo">
+
+    <div class="bonus-card__wrapper">
+      <span class="bonus-card__number">9627 0151 115</span>
+      <span class="bonus-card__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#barCode"></use>
+        </svg>
+      </span>
+    </div>
+  </a>
+</section>
+
+<section class="freeMode-slider swiper">
+  <div class="swiper-wrapper discount">
+    <a href="" class="discount__item swiper-slide" style="background: linear-gradient(236.49deg, #FFEBCC 0%, #FFC979 100%);">
+      <img src="img/card-img-8.jpg" alt="" class="discount__img">
+      <div class="discount__middle">
+        <span class="discount__title">Дополнительная скидка</span>
+        <span class="discount__value">20%</span>
+      </div>
+      <div class="discount__bottom">
+        <span class="discount__description">на выборочный ассортимент</span>
+      </div>
+    </a>
+
+    <a href="" class="discount__item swiper-slide" style="background: linear-gradient(236.49deg, #FFF4CC 0%, #D6AE24 100%);">
+      <img src="img/card-img-9.jpg" alt="" class="discount__img">
+      <div class="discount__middle">
+        <span class="discount__title">Дополнительная скидка</span>
+        <span class="discount__value">1%</span>
+      </div>
+      <div class="discount__bottom">
+        <span class="discount__description">на выборочный ассортимент</span>
+      </div>
+    </a>
+
+    <a href="" class="discount__item swiper-slide" style="background: linear-gradient(236.49deg, #FFEBCC 0%, #FFC979 100%);">
+      <img src="img/card-img-8.jpg" alt="" class="discount__img">
+      <div class="discount__middle">
+        <span class="discount__title">Дополнительная скидка</span>
+        <span class="discount__value">20%</span>
+      </div>
+      <div class="discount__bottom">
+        <span class="discount__description">на выборочный ассортимент</span>
+      </div>
+    </a>
+
+    <a href="" class="discount__item swiper-slide" style="background: linear-gradient(236.49deg, #FFF4CC 0%, #D6AE24 100%);">
+      <img src="img/card-img-9.jpg" alt="" class="discount__img">
+      <div class="discount__middle">
+        <span class="discount__title">Дополнительная скидка</span>
+        <span class="discount__value">1%</span>
+      </div>
+      <div class="discount__bottom">
+        <span class="discount__description">на выборочный ассортимент</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="container">
+  <h2 class="section-title">Лучшие предложения</h2>
+
+  <div class="card-wrapper">
+    <!-- После клика на В корзину card__bottom добавляется класс added который скрывает и показывает кнопки -->
+    <a class="card">
+      <div class="banner">
+        <span class="banner__item banner__discount">Акция</span>
+        <span class="banner__item banner__discount-value">-33%</span>
+      </div>
+
+      <img src="img/card-img-1.jpg" alt="" class="card__img">
+
+      <div class="card__middle">
+        <span class="card__name">Шампиньоны, 1кг</span>
+        <div class="card__box">
+          <span class="card__price">289,9 ₽</span>
+          <span class="card__price-old">429,9 ₽</span>
+        </div>
+      </div>
+
+      <div class="card__bottom">
+        <button type="button" class="btn card__tocart">
+          <svg>
+            <use xlink:href="img/sprite.svg#basket"></use>
+          </svg>
+          В корзину
+        </button>
+
+        <div class="card__counter counter">
+          <button class="card__btn counter__minus">-</button>
+          <input class="card__input counter__input" type="number" value="1">
+          <button class="card__btn counter__plus">+</button>
+        </div>
+      </div>
+    </a>
+
+    <a class="card">
+      <div class="banner">
+        <span class="banner__item banner__discount">Акция</span>
+        <span class="banner__item banner__discount-value">-33%</span>
+      </div>
+
+      <img src="img/card-img-5.jpg" alt="" class="card__img">
+
+      <div class="card__middle">
+        <span class="card__name">Шампиньоны, 1кг Шампиньоны, 1кг Шампиньоны, 1кг</span>
+        <div class="card__box">
+          <span class="card__price">289,9 ₽</span>
+          <span class="card__price-old">429,9 ₽</span>
+        </div>
+      </div>
+
+      <div class="card__bottom added">
+        <button type="button" class="btn card__tocart">
+          <svg>
+            <use xlink:href="img/sprite.svg#basket"></use>
+          </svg>
+          В корзину
+        </button>
+
+        <div class="card__counter counter">
+          <button class="card__btn counter__minus">
+            <svg>
+              <use xlink:href="img/sprite.svg#minus"></use>
+            </svg>
+          </button>
+          <input class="card__input counter__input" type="number" value="1">
+          <button class="card__btn counter__plus">
+            <svg>
+              <use xlink:href="img/sprite.svg#plus"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="container">
+  <h2 class="section-title">Комплекты</h2>
+
+  <div class="set">
+    <span class="set__title">Комплект «Поехали на шашлыки»</span>
+
+    <div class="breadcrumbs">
+      <a href="#" class="breadcrumbs__item">Каталог</a>
+      <a href="#" class="breadcrumbs__item">Наборы</a>
+      <a href="#" class="breadcrumbs__item">Набор «Поехали на шашлыки»</a>
+    </div>
+
+    <div class="set__wrapper">
+      <div class="set__item">
+        <img src="img/card-img-6.jpg" alt="" class="set__img">
+        <span class="set__name">Шашлык из говядины в горчичном маринаде</span>
+        <span class="set__price">550 ₽/уп</span>
+      </div>
+      <div class="set__item">
+        <img src="img/card-img-7.jpg" alt="" class="set__img">
+        <span class="set__name">Древесный уголь 10л</span>
+        <span class="set__price">199 ₽/шт</span>
+      </div>
+    </div>
+
+    <div class="set__box">
+      <span class="set__curent">699 ₽/шт</span>
+      <span class="set__old">749 ₽/шт</span>
+    </div>
+
+    <div class="set__bottom">
+      <span class="set__discount">-10%</span>
+      <span class="set__economy">Экономия 56 ₽</span>
+      <button class="set__tocart">
+        <svg>
+          <use xlink:href="img/sprite.svg#basket"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <h2 class="section-title">Спецпредложения</h2>
+
+  <section class="freeMode-slider swiper">
+    <div class="swiper-wrapper special-offer">
+      <a href="#" class="swiper-slide special-offer__item" style="background: linear-gradient(251.92deg, #47B200 0%, #348200 100%);">
+        <span class="special-offer__text">ДОПОЛНИТЕЛЬНАЯ СКИДКА ПО ВАШЕЙ КАРТЕ</span>
+        <span class="special-offer__discount">2%</span>
+      </a>
+
+      <a href="#" class="swiper-slide special-offer__item special-offer__item-img" style="background: linear-gradient(71.92deg, #FF8100 0%, #FFB162 100%);">
+        <span class="special-offer__text">ПЕРЕКУС НА ЛЮБОЙ ВКУС</span>
+        <div class="special-offer__bg">
+          <img src="img/card-img-10.jpg" alt="" class="special-offer__img">
+        </div>
+      </a>
+
+      <a href="#" class="swiper-slide special-offer__item" style="background: linear-gradient(251.92deg, #47B200 0%, #348200 100%);">
+        <span class="special-offer__text">ДОПОЛНИТЕЛЬНАЯ СКИДКА ПО ВАШЕЙ КАРТЕ</span>
+        <span class="special-offer__discount">2%</span>
+      </a>
+
+      <a href="#" class="swiper-slide special-offer__item special-offer__item-img" style="background: linear-gradient(71.92deg, #FF8100 0%, #FFB162 100%);">
+        <span class="special-offer__text">ПЕРЕКУС НА ЛЮБОЙ ВКУС</span>
+        <div class="special-offer__bg">
+          <img src="img/card-img-10.jpg" alt="" class="special-offer__img">
+        </div>
+      </a>
+    </div>
+  </section>
+</section>
+
+
+
+
+
+<!-- начало подвала -->
+</main>
+
+<footer class="footer">
+  <div class="panel">
+    <a href="/" class="panel__item">
+      <span class="panel__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#main"></use>
+        </svg>
+      </span>
+      <span class="panel__title">Главная</span>
+    </a>
+
+    <a href="/" class="panel__item">
+      <span class="panel__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#catalog"></use>
+        </svg>
+      </span>
+      <span class="panel__title">каталог</span>
+    </a>
+
+    <a href="/" class="panel__item">
+      <span class="panel__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#bag"></use>
+        </svg>
+      </span>
+      <span class="panel__title">корзина</span>
+    </a>
+
+    <a href="/" class="panel__item">
+      <span class="panel__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#shop"></use>
+        </svg>
+      </span>
+      <span class="panel__title">магазины</span>
+    </a>
+
+    <a href="/" class="panel__item">
+      <span class="panel__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#profile"></use>
+        </svg>
+      </span>
+      <span class="panel__title">профиль</span>
+    </a>
+  </div>
+</footer>
+
+
+<script src="js/swiper-bundle.min.js"></script>
+<script src="js/inputmask.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+
+</html>

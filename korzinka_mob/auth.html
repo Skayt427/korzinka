@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.min.css">
+
+  <title>title</title>
+</head>
+
+<body>
+  <main class="main">
+    <!-- конец шапки -->
+
+    <section class="container">
+      <form class="form login-one" data-back="login-one">
+        <a href="/" class="back">
+          <svg>
+            <use xlink:href="img/sprite.svg#arrowLeft"></use>
+          </svg>
+        </a>
+
+        <h2 class="section-title">Лучшие предложения</h2>
+
+        <input type="tel" class="input required">
+
+        <button type="submit" class="btn btn__submit">Продолжить</button>
+
+        <label class="agreement">
+          <input type="checkbox" class="slide-btn__input hidden">
+
+          <span class="agreement__text">Соглашаюсь получать новости и специальные предложения</span>
+
+          <div class="slide-btn">
+            <div class="slide-btn__circle"></div>
+          </div>
+        </label>
+
+        <a href="#" class="politics">
+          Пользовательского соглашения и Политики конфиденциальности
+          <b>Нажимая на кнопку «Продолжить», вы соглашаетесь с условиями</b>
+        </a>
+      </form>
+
+      <form class="sms login-two" style="display: none;" data-wrapper>
+        <button type="button" class="back" data-back-to="login-one">
+          <svg>
+            <use xlink:href="img/sprite.svg#arrowLeft"></use>
+          </svg>
+        </button>
+
+        <h2 class="section-title">Введите код</h2>
+
+        <span class="description">Сейчас вам поступит звонок. 4 последние цифры входящего номера - это код подтверждения.</span>
+
+        <div class="sms__wrapper">
+          <input class="sms__input" type="number" maxlength="1" tabindex="1">
+          <input class="sms__input" type="number" maxlength="1" tabindex="2">
+          <input class="sms__input" type="number" maxlength="1" tabindex="3">
+          <input class="sms__input" type="number" maxlength="1" tabindex="4">
+        </div>
+
+        <button type="submit" class="btn btn__submit">Продолжить</button>
+      </form>
+    </section>
+
+    <!-- начало подвала -->
+  </main>
+
+  <footer>
+
+  </footer>
+
+  <script src="js/inputmask.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
