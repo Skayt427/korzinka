@@ -17,16 +17,16 @@
     <!-- конец шапки -->
 
     <section class="container">
-      <form class="form login-one" data-link="login-one">
-        <a href="/korzinka/korzinka_mob/index.html" class="back">
+      <form class="form login-one" data-back="login-one">
+        <a href="/" class="back">
           <svg>
             <use xlink:href="img/sprite.svg#arrowLeft"></use>
           </svg>
         </a>
 
-        <h2 class="section-title">Введите номер телефона</h2>
+        <h2 class="section-title">Лучшие предложения</h2>
 
-        <input type="tel" class="input required js-auth-tel">
+        <input type="tel" class="input required">
 
         <button type="submit" class="btn btn__submit">Продолжить</button>
 
@@ -46,8 +46,8 @@
         </a>
       </form>
 
-      <form class="sms login-two" data-link-wrapper>
-        <button type="button" class="back" data-link-to="login-one">
+      <form class="sms login-two" style="display: none;" data-wrapper>
+        <button type="button" class="back" data-back-to="login-one">
           <svg>
             <use xlink:href="img/sprite.svg#arrowLeft"></use>
           </svg>
@@ -67,19 +67,6 @@
         <button type="submit" class="btn btn__submit">Продолжить</button>
       </form>
     </section>
-
-    <div class="modal" data-modal="cardNotFound">
-      <div class="modal__container">
-        <span class="modal__title">Виртуальная карта</span>
-        <p class="modal__text">Мы не нашли карту лояльности, привязанную к вашему номеру</p>
-        <p class="modal__text">Создайте виртуальную карту и участвуйте в программе лояльности</p>
-
-        <div class="modal__bottom">
-          <button type="button" class="modal__btn" data-modal-close>ЗАКРЫТЬ</button>
-          <a href="#" class="modal__btn">СОЗДАТЬ</a>
-        </div>
-      </div>
-    </div>
 
     <!-- начало подвала -->
   </main>

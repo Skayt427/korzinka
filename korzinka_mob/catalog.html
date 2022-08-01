@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/style.min.css">
+
+  <title>title</title>
+</head>
+
+<body>
+  <main class="main">
+    <!-- конец шапки -->
+
+<section class="container">
+  <a href="/korzinka/korzinka_mob/index.html" class="back">
+    <svg>
+      <use xlink:href="img/sprite.svg#arrowLeft"></use>
+    </svg>
+  </a>
+
+  <!-- Если адреса нет -->
+  <!-- <div class="location">
+    <span class="location__title">Укажите свой адрес</span>
+
+    <div class="location__box">
+      <span class="location__text">Чтобы видеть актуальную информацию по наличию товаров</span>
+    </div>
+
+    <button type="button" class="btn btn__submit location__btn">ВВЕСТИ АДРЕС</button>
+  </div> -->
+
+  <!-- Если адрес есть -->
+  <div class="location">
+    <span class="location__title">Адрес</span>
+
+    <div class="location__box">
+      <span class="location__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#location"></use>
+        </svg>
+      </span>
+      <span class="location__text">Липецк, ул. Ленина, 15</span>
+    </div>
+
+    <button type="button" class="btn btn__submit location__btn js-location-confirm">ПРОДОЛЖИТЬ</button>
+  </div>
+</section>
+
+<section class="container">
+  <form class="search">
+    <input type="search" class="input search__input" placeholder="Поиск">
+    <button type="submit" class="search__btn">
+      <svg>
+        <use xlink:href="img/sprite.svg#search"></use>
+      </svg>
+    </button>
+  </form>
+</section>
+
+<section class="container">
+  <a href="https://shop.riboedow.ru/" class="poster">
+    <img src="img/poster.jpg" alt="" class="poster__img">
+  </a>
+</section>
+
+<section class="container">
+  <h2 class="section-title">Лучшие предложения</h2>
+
+  <div class="card-wrapper">
+    <a class="card">
+      <div class="banner">
+        <span class="banner__item banner__discount">Акция</span>
+        <span class="banner__item banner__discount-value">-33%</span>
+      </div>
+
+      <img src="img/card-img-1.jpg" alt="" class="card__img">
+
+      <div class="card__middle">
+        <span class="card__name">Шампиньоны, 1кг</span>
+        <div class="card__box">
+          <span class="card__price">289,9 ₽</span>
+          <span class="card__price-old">429,9 ₽</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="card">
+      <div class="banner">
+        <span class="banner__item banner__discount">Акция</span>
+        <span class="banner__item banner__discount-value">-33%</span>
+      </div>
+
+      <img src="img/card-img-5.jpg" alt="" class="card__img">
+
+      <div class="card__middle">
+        <span class="card__name">Шампиньоны, 1кг Шампиньоны, 1кг Шампиньоны, 1кг</span>
+        <div class="card__box">
+          <span class="card__price">289,9 ₽</span>
+          <span class="card__price-old">429,9 ₽</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="container">
+  <h2 class="section-title">Категории</h2>
+
+  <div class="category">
+    <a href="/korzinka/korzinka_mob/category.html" class="category__item" style="background: linear-gradient(45deg, #EDEDED 0%, #F5F5F5 100%);">
+      <div class="category__box">
+        <img src="img/category-1.png" alt="" class="category__img">
+      </div>
+      <span class="category__title">МОЛОКО</span>
+    </a>
+
+    <a href="/korzinka/korzinka_mob/category.html" class="category__item" style="background: linear-gradient(225deg, #FFF0F0 0%, #FFC2C2 100%);">
+      <div class="category__box">
+        <img src="img/category-2.png" alt="" class="category__img">
+      </div>
+      <span class="category__title">МОРОЖЕНОЕ</span>
+    </a>
+
+    <a href="/korzinka/korzinka_mob/category.html" class="category__item" style="background: linear-gradient(225deg, #FFB7B5 0%, #E0808B 100%);">
+      <div class="category__box">
+        <img src="img/category-3.png" alt="" class="category__img">
+      </div>
+      <span class="category__title">МЯСО ГОВЯДИНЫ МЯСО ГОВЯДИНЫ</span>
+    </a>
+
+    <a href="/korzinka/korzinka_mob/category.html" class="category__item" style="background: linear-gradient(45deg, #E9866F 0%, #FED7D8 100%);">
+      <div class="category__box">
+        <img src="img/category-4.png" alt="" class="category__img">
+      </div>
+      <span class="category__title">МЯСО ИНДЕЙКИ</span>
+    </a>
+  </div>
+
+</section>
+
+<!-- начало подвала -->
+</main>
+
+<footer class="footer">
+  <div class="panel">
+    <a href="/" class="panel__item">
+      <span class="panel__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#main"></use>
+        </svg>
+      </span>
+      <span class="panel__title">Главная</span>
+    </a>
+
+    <a href="/korzinka/korzinka_mob/catalog.html" class="panel__item">
+      <span class="panel__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#catalog"></use>
+        </svg>
+      </span>
+      <span class="panel__title">каталог</span>
+    </a>
+
+    <a href="/" class="panel__item">
+      <span class="panel__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#bag"></use>
+        </svg>
+      </span>
+      <span class="panel__title">корзина</span>
+
+      <span class="panel__counter">3</span>
+    </a>
+
+    <a href="/" class="panel__item">
+      <span class="panel__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#shop"></use>
+        </svg>
+      </span>
+      <span class="panel__title">магазины</span>
+    </a>
+
+    <a href="/" class="panel__item">
+      <span class="panel__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#profile"></use>
+        </svg>
+      </span>
+      <span class="panel__title">профиль</span>
+    </a>
+  </div>
+</footer>
+
+
+<script src="js/swiper-bundle.min.js"></script>
+<script src="js/inputmask.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+
+</html>
