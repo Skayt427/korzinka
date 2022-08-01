@@ -2,46 +2,49 @@ document.addEventListener("DOMContentLoaded", function () {
   let body = document.querySelector('body');
 
   // Слайдеры 
-  new Swiper('.discount-slider', {
-    slidesPerView: 1.3,
-    spaceBetween: 14,
-    freeMode: true,
-    breakpoints: {
-      320: {
-        slidesPerView: 1.1,
+  if (document.querySelector('.discount-slider')) {
+    new Swiper('.discount-slider', {
+      slidesPerView: 1.3,
+      spaceBetween: 14,
+      freeMode: true,
+      breakpoints: {
+        320: {
+          slidesPerView: 1.1,
+        },
+        375: {
+          slidesPerView: 1.3,
+        },
+        420: {
+          slidesPerView: 1.5,
+        },
+        480: {
+          slidesPerView: 1.8,
+        },
       },
-      375: {
-        slidesPerView: 1.3,
-      },
-      420: {
-        slidesPerView: 1.5,
-      },
-      480: {
-        slidesPerView: 1.8,
-      },
-    }
-  });
+    });
+  };
 
-  new Swiper('.special-offer-slider', {
-    slidesPerView: 1.3,
-    spaceBetween: 14,
-    freeMode: true,
-    breakpoints: {
-      320: {
-        slidesPerView: 1.3,
+  if (document.querySelector('.special-offer-slider')) {
+    new Swiper('.special-offer-slider', {
+      slidesPerView: 1.3,
+      spaceBetween: 14,
+      freeMode: true,
+      breakpoints: {
+        320: {
+          slidesPerView: 1.3,
+        },
+        375: {
+          slidesPerView: 1.6,
+        },
+        420: {
+          slidesPerView: 1.9,
+        },
+        480: {
+          slidesPerView: 2.2,
+        },
       },
-      375: {
-        slidesPerView: 1.6,
-      },
-      420: {
-        slidesPerView: 1.9,
-      },
-      480: {
-        slidesPerView: 2.2,
-      },
-    }
-  });
-
+    });
+  };
 
   // Клик по кнопке В корзину у карточки
   let cardToCart = document.querySelectorAll('.card__tocart');

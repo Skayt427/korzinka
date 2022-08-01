@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         480: {
           slidesPerView: 1.8,
         },
-      }
+      },
     });
   };
 
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
         480: {
           slidesPerView: 2.2,
         },
-      }
+      },
     });
   };
 
