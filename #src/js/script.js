@@ -4,45 +4,17 @@ document.addEventListener("DOMContentLoaded", function () {
   // Слайдеры 
   if (document.querySelector('.discount-slider')) {
     new Swiper('.discount-slider', {
-      slidesPerView: 1.3,
+      slidesPerView: 'auto',
       spaceBetween: 14,
       freeMode: true,
-      breakpoints: {
-        320: {
-          slidesPerView: 1.1,
-        },
-        375: {
-          slidesPerView: 1.3,
-        },
-        420: {
-          slidesPerView: 1.5,
-        },
-        480: {
-          slidesPerView: 1.8,
-        },
-      },
     });
   };
 
   if (document.querySelector('.special-offer-slider')) {
     new Swiper('.special-offer-slider', {
-      slidesPerView: 1.3,
+      slidesPerView: 'auto',
       spaceBetween: 14,
       freeMode: true,
-      breakpoints: {
-        320: {
-          slidesPerView: 1.3,
-        },
-        375: {
-          slidesPerView: 1.6,
-        },
-        420: {
-          slidesPerView: 1.9,
-        },
-        480: {
-          slidesPerView: 2.2,
-        },
-      },
     });
   };
 
@@ -123,23 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
-  // Валидация
-  function checkValue(input) {
-    let isValid = false;
-
-    if (input.getAttribute('type') == 'tel') {
-      isValid = Inputmask.isValid(input.value, { mask: "+7 999 999-99-99" });
-    } else if (input.getAttribute('type') == 'checkbox') {
-      input.checked ? isValid = true : isValid = false;
-    }
-
-    if (!isValid) {
-      return false;
-    } else {
-      return true;
-    };
-  };
-
   // inputmask
   if (document.querySelector('input[type="tel"]')) {
     new Inputmask({
@@ -153,6 +108,75 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     }).mask(document.querySelectorAll('input[type="tel"]'));
   }
+
+  if (document.querySelector('.js-date-input')) {
+    new Inputmask({
+      // alias: "date",
+      mask: '99.99.9999',
+      // validator: "/^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/",
+      // mask: "99/99/9999",
+      // placeholder: "dd/mm/yyyy",
+      // clearMaskOnLostFocus: false,
+      oncomplete: function () {
+        checkValue(this);
+      },
+      onincomplete: function () {
+        checkValue(this);
+      },
+    }).mask(document.querySelectorAll('.js-date-input'));
+  }
+
+  // Валидация
+  function checkValue(input) {
+    let isValid = false;
+
+    if (input.getAttribute('type') == 'tel') {
+      // Телефон
+      isValid = Inputmask.isValid(input.value, { mask: "+7 999 999-99-99" });
+
+    } else if (input.getAttribute('type') == 'email') {
+      // Почта
+      let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+      reg.test(input.value) ? isValid = true : isValid = false;
+
+    } else if (input.getAttribute('type') == 'date') {
+      // Дата
+      if (input.value != '' && input.value.length == 10 && input.value > '1900-01-01' && input.value < '2020-01-01') {
+        isValid = true;
+      } else {
+        isValid = false;
+      }
+
+    } else if (input.getAttribute('type') == 'checkbox') {
+      // Чекбокс
+      input.checked ? isValid = true : isValid = false;
+
+    } else if (input.getAttribute('type') == 'radio') {
+      // Радиокнопки
+      let radioBtn = document.querySelectorAll('[type="radio"]');
+      let checkedRadio = 0;
+
+      radioBtn.forEach(radio => {
+        if (radio.checked) {
+          checkedRadio++
+        };
+      });
+
+      console.log(checkedRadio);
+      checkedRadio >= 1 ? isValid = true : isValid = false;
+
+    } else {
+      // Короткий текст (имя, фамилия и тд)
+      let reg = /^[A-Za-zА-Яа-яЁё]+$/;
+      reg.test(input.value) ? isValid = true : isValid = false;
+    }
+
+    if (!isValid) {
+      return false;
+    } else {
+      return true;
+    };
+  };
 
   // Форма ввода кода из смс
   const inputsNL = document.querySelectorAll('.sms__input');
@@ -237,8 +261,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
-  // Каталог
-  // Кнопка выбрать известный адрес
+  // Каталог кнопка выбрать известный адрес
   let locationConfirm = document.querySelector('.js-location-confirm');
   if (locationConfirm) {
     locationConfirm.addEventListener('click', function () {
@@ -246,4 +269,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
+
+  // Инпут дата плейсхолдер
+  let datePlace = document.querySelector('.date');
+
+  if (datePlace) {
+    if (datePlace.querySelector('.input').value != '') {
+      datePlace.querySelector('.date__placeholder').remove();
+    } else {
+      datePlace.addEventListener('click', function () {
+        this.querySelector('.date__placeholder').remove();
+      });
+    };
+  };
 });

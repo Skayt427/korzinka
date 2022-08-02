@@ -1,0 +1,49 @@
+@@include('include_html/header.html')
+
+<section class="container">
+  <a href="/korzinka/korzinka_mob/personal.html" class="back">
+    <svg>
+      <use xlink:href="img/sprite.svg#arrowLeft"></use>
+    </svg>
+  </a>
+
+  <h2 class="section-title">Мой профиль</h2>
+
+  <form class="form profile">
+    <div class="check">
+      <label class="check__label">
+        <input class="check__input required" type="radio" name="gender">
+        <span class="check__box">
+          <svg>
+            <use xlink:href="img/sprite.svg#selected"></use>
+          </svg>
+        </span>
+        Мужчина
+      </label>
+
+      <label class="check__label">
+        <input class="check__input" type="radio" name="gender">
+        <span class="check__box">
+          <svg>
+            <use xlink:href="img/sprite.svg#selected"></use>
+          </svg>
+        </span>
+        Женщина
+      </label>
+    </div>
+
+    <input type="text" class="input required" placeholder="Имя">
+    <input type="text" class="input required" placeholder="Фамилия">
+    <label class="date">
+      <!-- надо вписать в css путь к картинке календаря на хосте :/ найти можно так input[type=date] -->
+      <input type="date" class="input required">
+      <span class="date__placeholder">Дата рождения</span>
+    </label>
+    <input type="email" class="input required" placeholder="E-mail *">
+
+    <button type="submit" class="btn btn__submit">СОХРАНИТЬ</button>
+  </form>
+</section>
+
+
+@@include('include_html/footer.html')

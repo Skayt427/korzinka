@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/style.min.css">
+
+  <title>title</title>
+</head>
+
+<body>
+  <main class="main">
+    <!-- конец шапки -->
+
+<section class="container">
+  <a href="/korzinka/korzinka_mob/personal.html" class="back">
+    <svg>
+      <use xlink:href="img/sprite.svg#arrowLeft"></use>
+    </svg>
+  </a>
+
+  <h2 class="section-title">Мои покупки</h2>
+  <!-- Статусы 
+    <span class="status" style="background-color: #FFA800;">Принят</span>
+    <span class="status" style="background-color: #0075FF;">Собран</span>
+    <span class="status" style="background-color: #3502C6;">Доставляется</span>
+    <span class="status" style="background-color: #47B200;">Выполнен</span>
+    <span class="status" style="background-color: #B61426;">Ожидает оплаты</span>
+  -->
+  <div class="order-card">
+    <div class="order-card__item">
+      <div class="order-card__top">
+        <span class="order-card__title">Заказ № 123456</span>
+        <span class="status" style="background-color: #FFA800;">Принят</span>
+      </div>
+
+      <span class="order-card__date">13 июня 2022 в 21:56</span>
+
+      <div class="order-card__bottom">
+        <span class="order-card__price">990 ₽</span>
+
+        <a href="/korzinka/korzinka_mob/purchases-detail.html" class="order-card__btn">ПОДРОБНЕЕ О ЗАКАЗЕ</a>
+      </div>
+    </div>
+
+    <div class="order-card__item">
+      <div class="order-card__top">
+        <span class="order-card__title">Заказ № 123456</span>
+        <span class="status" style="background-color: #0075FF;">СОБРАН</span>
+      </div>
+
+      <span class="order-card__date">13 июня 2022 в 21:56</span>
+
+      <div class="order-card__bottom">
+        <span class="order-card__price">990 ₽</span>
+
+        <a href="/korzinka/korzinka_mob/purchases-detail.html" class="order-card__btn">ПОДРОБНЕЕ О ЗАКАЗЕ</a>
+      </div>
+    </div>
+
+    <div class="order-card__item">
+      <div class="order-card__top">
+        <span class="order-card__title">Заказ № 123456</span>
+        <span class="status" style="background-color: #3502C6;">ДОСТАВЛЯЕТСЯ</span>
+      </div>
+
+      <span class="order-card__date">13 июня 2022 в 21:56</span>
+
+      <div class="order-card__bottom">
+        <span class="order-card__price">990 ₽</span>
+
+        <a href="/korzinka/korzinka_mob/purchases-detail.html" class="order-card__btn">ПОДРОБНЕЕ О ЗАКАЗЕ</a>
+      </div>
+    </div>
+
+    <div class="order-card__item">
+      <div class="order-card__top">
+        <span class="order-card__title">Заказ № 123456</span>
+        <span class="status" style="background-color: #47B200;">ВЫПОЛНЕН</span>
+      </div>
+
+      <span class="order-card__date">13 июня 2022 в 21:56</span>
+
+      <div class="order-card__bottom">
+        <span class="order-card__price">990 ₽</span>
+
+        <a href="/korzinka/korzinka_mob/purchases-detail.html" class="order-card__btn">ПОДРОБНЕЕ О ЗАКАЗЕ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- начало подвала -->
+</main>
+
+<footer class="footer">
+  <div class="panel">
+    <a href="/korzinka/korzinka_mob/index.html" class="panel__item">
+      <span class="panel__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#main"></use>
+        </svg>
+      </span>
+      <span class="panel__title">Главная</span>
+    </a>
+
+    <a href="/korzinka/korzinka_mob/catalog.html" class="panel__item">
+      <span class="panel__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#catalog"></use>
+        </svg>
+      </span>
+      <span class="panel__title">каталог</span>
+    </a>
+
+    <a href="/" class="panel__item">
+      <span class="panel__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#bag"></use>
+        </svg>
+      </span>
+      <span class="panel__title">корзина</span>
+
+      <span class="panel__counter">3</span>
+    </a>
+
+    <a href="/" class="panel__item">
+      <span class="panel__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#shop"></use>
+        </svg>
+      </span>
+      <span class="panel__title">магазины</span>
+    </a>
+
+    <a href="/korzinka/korzinka_mob/personal.html" class="panel__item">
+      <span class="panel__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#profile"></use>
+        </svg>
+      </span>
+      <span class="panel__title">профиль</span>
+    </a>
+  </div>
+</footer>
+
+
+<script src="js/swiper-bundle.min.js"></script>
+<script src="js/inputmask.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+
+</html>

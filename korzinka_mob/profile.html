@@ -18,42 +18,50 @@
     <!-- конец шапки -->
 
 <section class="container">
-  <a href="/korzinka/korzinka_mob/catalog.html" class="back">
+  <a href="/korzinka/korzinka_mob/personal.html" class="back">
     <svg>
       <use xlink:href="img/sprite.svg#arrowLeft"></use>
     </svg>
   </a>
 
-  <h2 class="section-title">Рыба, морепродукты</h2>
+  <h2 class="section-title">Мой профиль</h2>
 
-  <form class="search">
-    <input type="search" class="input search__input" placeholder="Поиск">
-    <button type="submit" class="search__btn">
-      <svg>
-        <use xlink:href="img/sprite.svg#search"></use>
-      </svg>
-    </button>
+  <form class="form profile">
+    <div class="check">
+      <label class="check__label">
+        <input class="check__input required" type="radio" name="gender">
+        <span class="check__box">
+          <svg>
+            <use xlink:href="img/sprite.svg#selected"></use>
+          </svg>
+        </span>
+        Мужчина
+      </label>
+
+      <label class="check__label">
+        <input class="check__input" type="radio" name="gender">
+        <span class="check__box">
+          <svg>
+            <use xlink:href="img/sprite.svg#selected"></use>
+          </svg>
+        </span>
+        Женщина
+      </label>
+    </div>
+
+    <input type="text" class="input required" placeholder="Имя">
+    <input type="text" class="input required" placeholder="Фамилия">
+    <label class="date">
+      <!-- надо вписать в css путь к картинке календаря на хосте :/ найти можно так input[type=date] -->
+      <input type="date" class="input required">
+      <span class="date__placeholder">Дата рождения</span>
+    </label>
+    <input type="email" class="input required" placeholder="E-mail *">
+
+    <button type="submit" class="btn btn__submit">СОХРАНИТЬ</button>
   </form>
-
-  <div class="category-group">
-    <a href="/korzinka/korzinka_mob/category-detail.html" class="category-group__item">
-      <span class="category-group__name">Рыба охлажденная</span>
-      <span class="category-group__quantity">31</span>
-    </a>
-    <a href="/korzinka/korzinka_mob/category-detail.html" class="category-group__item">
-      <span class="category-group__name">Копченая рыба</span>
-      <span class="category-group__quantity">31</span>
-    </a>
-    <a href="/korzinka/korzinka_mob/category-detail.html" class="category-group__item">
-      <span class="category-group__name">Икра</span>
-      <span class="category-group__quantity">31</span>
-    </a>
-    <a href="/korzinka/korzinka_mob/category-detail.html" class="category-group__item">
-      <span class="category-group__name">Соленая рыба, пресервы</span>
-      <span class="category-group__quantity">31</span>
-    </a>
-  </div>
 </section>
+
 
 <!-- начало подвала -->
 </main>

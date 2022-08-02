@@ -534,6 +534,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    max-width: 247px;
     color: $color-black;
     background: linear-gradient(45deg, #EDEDED 0%, #F5F5F5 100%);
     border-radius: 8px;
@@ -640,19 +641,25 @@
   }
 }
 
-
 .special-offer {
   &__item {
     position: relative;
     display: block;
+    max-width: 196px;
     width: 100%;
     height: 112px;
+    max-height: 112px;
+    box-sizing: border-box;
     padding: 16px;
     border-radius: 8px;
 
     &-img {
       display: flex;
       align-items: center;
+
+      & .special-offer__text {
+        margin-right: 4px;
+      }
     }
   }
 
@@ -675,6 +682,8 @@
     line-height: 16px;
     text-transform: uppercase;
     color: $color-white;
+    display: block;
+    margin-right: 20px;
   }
 
   &__discount {
@@ -866,5 +875,234 @@
 
   &__quantity {
     margin-left: 20px;
+  }
+}
+
+.personal {
+  & .btn {
+    margin-top: 32px;
+  }
+
+  &__list {
+    &+.personal__title {
+      margin-top: 32px;
+    }
+  }
+
+  &__title {
+    display: block;
+    font-size: 20px;
+    line-height: 26px;
+    color: $color-green;
+
+    &+.personal__list {
+      margin-top: 32px;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 16px 0;
+    font-size: 14px;
+    line-height: 18px;
+    color: #3B3230;
+    border-bottom: 1px solid $color-gray-light;
+  }
+}
+
+.order-card {
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 16px;
+    padding: 16px;
+    background-color: #F9F9FA;
+    border-radius: 8px;
+    color: $color-gray;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__date {
+    margin-top: 4px;
+    font-size: 10px;
+    line-height: 12px;
+    color: $color-main;
+
+    &+.order-card__price {
+      margin-top: 16px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 4px;
+  }
+
+  &__btn {
+    padding: 8.5px 17px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: $color-green;
+    border: 1px solid $color-green;
+    border-radius: 8px;
+  }
+
+  & .status {
+    margin-left: 10px;
+  }
+}
+
+.status {
+  padding: 5px 12px;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 12px;
+  color: $color-white;
+  background: #FFA800;
+  border-radius: 8px;
+  text-transform: uppercase;
+
+  &+.status {
+    margin-left: 8px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+
+    & .status {
+      padding: 5px 5.5px;
+    }
+  }
+}
+
+.address {
+  display: flex;
+  align-items: center;
+  margin-top: 9px;
+
+  svg {
+    width: 14px;
+    height: 16px;
+    margin-right: 10px;
+    fill: $color-gray;
+  }
+
+  &__value {
+    font-size: 14px;
+    line-height: 17px;
+    color: $color-gray;
+  }
+}
+
+.order-detail {
+  &__date {
+    display: block;
+    margin-bottom: 16px;
+    font-size: 10px;
+    line-height: 12px;
+    color: $color-gray;
+  }
+
+  &__subtitle {
+    display: block;
+    margin-top: 32px;
+    font-weight: 600;
+  }
+
+  &__text {
+    display: block;
+    margin-top: 8px;
+    color: #3B3230;
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+    padding: 16px;
+    border: 1px solid $color-gray-light;
+    border-radius: 8px;
+  }
+
+  &__img {
+    width: 78px;
+    margin-right: 28px;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    font-size: 16px;
+    line-height: 21px;
+
+    b {
+      display: inline-block;
+      color: $color-black;
+    }
+  }
+
+  &__weight {
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #D0D0D0;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  &__current {
+    color: $color-green
+  }
+
+  &__old {
+    margin-left: 16px;
+    color: $color-gray;
+    text-decoration: line-through;
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 32px;
+
+    & .order-detail__subtitle {
+      margin-top: 0;
+    }
+  }
+
+  &__total {
+    font-weight: 700;
+    color: $color-green;
+  }
+}
+
+@media (min-width: 400px) {
+  .order-detail__img {
+    width: 50%;
   }
 }

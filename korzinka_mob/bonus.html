@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/style.min.css">
 
   <title>title</title>
@@ -16,129 +17,133 @@
   <main class="main">
     <!-- конец шапки -->
 
-    <section class="container bonus" data-link="bonus1" data-link-wrapper>
-      <a href="/korzinka/korzinka_mob/index.html" class="back">
-        <svg>
-          <use xlink:href="img/sprite.svg#arrowLeft"></use>
-        </svg>
-      </a>
+<section class="container bonus" data-link="bonus1" data-link-wrapper>
+  <a href="/korzinka/korzinka_mob/index.html" class="back">
+    <svg>
+      <use xlink:href="img/sprite.svg#arrowLeft"></use>
+    </svg>
+  </a>
 
-      <div class="bonus-detail">
-        <span class="bonus-detail__title">БОНУСНАЯ КАРТА</span>
-        <div class="bonus-detail__wrapper">
-          <img src="img/bar-code.jpg" alt="">
-        </div>
-        <span class="bonus-detail__number">9627 0151 115</span>
-      </div>
-
-      <button type="button" class="btn btn__submit bonus-detail__btn" data-link-to="bonus2">
-        Бонусы
-        <svg>
-          <use xlink:href="img/sprite.svg#wallet"></use>
-        </svg>
-      </button>
-    </section>
-
-    <section class="container" style="display: none;" data-link="bonus2" data-link-wrapper>
-      <button type="button" class="back" data-link-to="bonus1">
-        <svg>
-          <use xlink:href="img/sprite.svg#arrowLeft"></use>
-        </svg>
-      </button>
-
-      <h2 class="section-title">
-        История бонусов
-        <button type="button" class="info" data-modal-trigger="bonusInfo">
-          <svg>
-            <use xlink:href="img/sprite.svg#i"></use>
-          </svg>
-        </button>
-      </h2>
-
-      <div class="bonus__table">
-        <div class="bonus__row bonus__head">
-          <div class="bonus__cell">Дата начисления</div>
-          <div class="bonus__cell">Количество</div>
-        </div>
-        <div class="bonus__row">
-          <div class="bonus__cell">22.05.2022</div>
-          <div class="bonus__cell">50</div>
-        </div>
-        <div class="bonus__row">
-          <div class="bonus__cell">22.05.2022</div>
-          <div class="bonus__cell">50</div>
-        </div>
-      </div>
-
-      <!-- Отображается если сверху нет bonus__table -->
-      <span class="bonus__empty">У вас пока нет бонусов</span>
-    </section>
-
-
-    <div class="modal" data-modal="bonusInfo">
-      <div class="modal__container">
-        <span class="modal__title">О бонусах</span>
-        <p class="modal__text">Текстовая информаиця об условиях начисления бонусов</p>
-        <div class="modal__bottom">
-          <button type="button" class="modal__btn" data-modal-close>ЗАКРЫТЬ</button>
-        </div>
-      </div>
+  <div class="bonus-detail">
+    <span class="bonus-detail__title">БОНУСНАЯ КАРТА</span>
+    <div class="bonus-detail__wrapper">
+      <img src="img/bar-code.jpg" alt="">
     </div>
-    <!-- начало подвала -->
-  </main>
+    <span class="bonus-detail__number">9627 0151 115</span>
+  </div>
 
-  <footer class="footer">
-    <div class="panel">
-      <a href="/" class="panel__item">
-        <span class="panel__icon">
-          <svg>
-            <use xlink:href="img/sprite.svg#main"></use>
-          </svg>
-        </span>
-        <span class="panel__title">Главная</span>
-      </a>
+  <button type="button" class="btn btn__submit bonus-detail__btn" data-link-to="bonus2">
+    Бонусы
+    <svg>
+      <use xlink:href="img/sprite.svg#wallet"></use>
+    </svg>
+  </button>
+</section>
 
-      <a href="/" class="panel__item">
-        <span class="panel__icon">
-          <svg>
-            <use xlink:href="img/sprite.svg#catalog"></use>
-          </svg>
-        </span>
-        <span class="panel__title">каталог</span>
-      </a>
+<section class="container" style="display: none;" data-link="bonus2" data-link-wrapper>
+  <button type="button" class="back" data-link-to="bonus1">
+    <svg>
+      <use xlink:href="img/sprite.svg#arrowLeft"></use>
+    </svg>
+  </button>
 
-      <a href="/" class="panel__item">
-        <span class="panel__icon">
-          <svg>
-            <use xlink:href="img/sprite.svg#bag"></use>
-          </svg>
-        </span>
-        <span class="panel__title">корзина</span>
+  <h2 class="section-title">
+    История бонусов
+    <button type="button" class="info" data-modal-trigger="bonusInfo">
+      <svg>
+        <use xlink:href="img/sprite.svg#i"></use>
+      </svg>
+    </button>
+  </h2>
 
-        <span class="panel__counter">3</span>
-      </a>
-
-      <a href="/" class="panel__item">
-        <span class="panel__icon">
-          <svg>
-            <use xlink:href="img/sprite.svg#shop"></use>
-          </svg>
-        </span>
-        <span class="panel__title">магазины</span>
-      </a>
-
-      <a href="/" class="panel__item">
-        <span class="panel__icon">
-          <svg>
-            <use xlink:href="img/sprite.svg#profile"></use>
-          </svg>
-        </span>
-        <span class="panel__title">профиль</span>
-      </a>
+  <div class="bonus__table">
+    <div class="bonus__row bonus__head">
+      <div class="bonus__cell">Дата начисления</div>
+      <div class="bonus__cell">Количество</div>
     </div>
-  </footer>
+    <div class="bonus__row">
+      <div class="bonus__cell">22.05.2022</div>
+      <div class="bonus__cell">50</div>
+    </div>
+    <div class="bonus__row">
+      <div class="bonus__cell">22.05.2022</div>
+      <div class="bonus__cell">50</div>
+    </div>
+  </div>
 
-  <script src="js/script.js"></script>
+  <!-- Отображается если сверху нет bonus__table -->
+  <span class="bonus__empty">У вас пока нет бонусов</span>
+</section>
+
+
+<div class="modal" data-modal="bonusInfo">
+  <div class="modal__container">
+    <span class="modal__title">О бонусах</span>
+    <p class="modal__text">Текстовая информаиця об условиях начисления бонусов</p>
+    <div class="modal__bottom">
+      <button type="button" class="modal__btn" data-modal-close>ЗАКРЫТЬ</button>
+    </div>
+  </div>
+</div>
+
+<!-- начало подвала -->
+</main>
+
+<footer class="footer">
+  <div class="panel">
+    <a href="/korzinka/korzinka_mob/index.html" class="panel__item">
+      <span class="panel__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#main"></use>
+        </svg>
+      </span>
+      <span class="panel__title">Главная</span>
+    </a>
+
+    <a href="/korzinka/korzinka_mob/catalog.html" class="panel__item">
+      <span class="panel__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#catalog"></use>
+        </svg>
+      </span>
+      <span class="panel__title">каталог</span>
+    </a>
+
+    <a href="/" class="panel__item">
+      <span class="panel__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#bag"></use>
+        </svg>
+      </span>
+      <span class="panel__title">корзина</span>
+
+      <span class="panel__counter">3</span>
+    </a>
+
+    <a href="/" class="panel__item">
+      <span class="panel__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#shop"></use>
+        </svg>
+      </span>
+      <span class="panel__title">магазины</span>
+    </a>
+
+    <a href="/korzinka/korzinka_mob/personal.html" class="panel__item">
+      <span class="panel__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#profile"></use>
+        </svg>
+      </span>
+      <span class="panel__title">профиль</span>
+    </a>
+  </div>
+</footer>
+
+
+<script src="js/swiper-bundle.min.js"></script>
+<script src="js/inputmask.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 
 </html>

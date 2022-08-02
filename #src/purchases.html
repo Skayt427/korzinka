@@ -1,0 +1,81 @@
+@@include('include_html/header.html')
+
+<section class="container">
+  <a href="/korzinka/korzinka_mob/personal.html" class="back">
+    <svg>
+      <use xlink:href="img/sprite.svg#arrowLeft"></use>
+    </svg>
+  </a>
+
+  <h2 class="section-title">Мои покупки</h2>
+  <!-- Статусы 
+    <span class="status" style="background-color: #FFA800;">Принят</span>
+    <span class="status" style="background-color: #0075FF;">Собран</span>
+    <span class="status" style="background-color: #3502C6;">Доставляется</span>
+    <span class="status" style="background-color: #47B200;">Выполнен</span>
+    <span class="status" style="background-color: #B61426;">Ожидает оплаты</span>
+  -->
+  <div class="order-card">
+    <div class="order-card__item">
+      <div class="order-card__top">
+        <span class="order-card__title">Заказ № 123456</span>
+        <span class="status" style="background-color: #FFA800;">Принят</span>
+      </div>
+
+      <span class="order-card__date">13 июня 2022 в 21:56</span>
+
+      <div class="order-card__bottom">
+        <span class="order-card__price">990 ₽</span>
+
+        <a href="/korzinka/korzinka_mob/purchases-detail.html" class="order-card__btn">ПОДРОБНЕЕ О ЗАКАЗЕ</a>
+      </div>
+    </div>
+
+    <div class="order-card__item">
+      <div class="order-card__top">
+        <span class="order-card__title">Заказ № 123456</span>
+        <span class="status" style="background-color: #0075FF;">СОБРАН</span>
+      </div>
+
+      <span class="order-card__date">13 июня 2022 в 21:56</span>
+
+      <div class="order-card__bottom">
+        <span class="order-card__price">990 ₽</span>
+
+        <a href="/korzinka/korzinka_mob/purchases-detail.html" class="order-card__btn">ПОДРОБНЕЕ О ЗАКАЗЕ</a>
+      </div>
+    </div>
+
+    <div class="order-card__item">
+      <div class="order-card__top">
+        <span class="order-card__title">Заказ № 123456</span>
+        <span class="status" style="background-color: #3502C6;">ДОСТАВЛЯЕТСЯ</span>
+      </div>
+
+      <span class="order-card__date">13 июня 2022 в 21:56</span>
+
+      <div class="order-card__bottom">
+        <span class="order-card__price">990 ₽</span>
+
+        <a href="/korzinka/korzinka_mob/purchases-detail.html" class="order-card__btn">ПОДРОБНЕЕ О ЗАКАЗЕ</a>
+      </div>
+    </div>
+
+    <div class="order-card__item">
+      <div class="order-card__top">
+        <span class="order-card__title">Заказ № 123456</span>
+        <span class="status" style="background-color: #47B200;">ВЫПОЛНЕН</span>
+      </div>
+
+      <span class="order-card__date">13 июня 2022 в 21:56</span>
+
+      <div class="order-card__bottom">
+        <span class="order-card__price">990 ₽</span>
+
+        <a href="/korzinka/korzinka_mob/purchases-detail.html" class="order-card__btn">ПОДРОБНЕЕ О ЗАКАЗЕ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+@@include('include_html/footer.html')
