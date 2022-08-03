@@ -27,6 +27,24 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Табы
+  let tabsBtns = document.querySelectorAll('.tabs__btn');
+
+  if (tabsBtns) {
+    tabsBtns.forEach(btn => {
+      btn.addEventListener('click', function () {
+        let id = this.getAttribute('data-tab');
+        let content = document.querySelector('.tabs__item[data-tab="' + id + '"]');
+
+        this.closest('.tabs__btns').querySelector('.tabs__btn.active').classList.remove('active');
+        this.classList.add('active');
+
+        this.closest('.tabs').querySelector('.tabs__item.active').classList.remove('active');
+        content.classList.add('active');
+      });
+    });
+  };
+
 
   // Счетчик в карточке
   let counterWrapper = document.querySelectorAll('.counter');
@@ -109,23 +127,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }).mask(document.querySelectorAll('input[type="tel"]'));
   }
 
-  if (document.querySelector('.js-date-input')) {
-    new Inputmask({
-      // alias: "date",
-      mask: '99.99.9999',
-      // validator: "/^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/",
-      // mask: "99/99/9999",
-      // placeholder: "dd/mm/yyyy",
-      // clearMaskOnLostFocus: false,
-      oncomplete: function () {
-        checkValue(this);
-      },
-      onincomplete: function () {
-        checkValue(this);
-      },
-    }).mask(document.querySelectorAll('.js-date-input'));
-  }
-
   // Валидация
   function checkValue(input) {
     let isValid = false;
@@ -138,6 +139,12 @@ document.addEventListener("DOMContentLoaded", function () {
       // Почта
       let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
       reg.test(input.value) ? isValid = true : isValid = false;
+
+    } else if (input.getAttribute('type') == 'search') {
+      // Поиск
+      let reg = /^[а-яА-Я\s.,()]+?\d+/i;
+      reg.test(input.value) ? isValid = true : isValid = false;
+
 
     } else if (input.getAttribute('type') == 'date') {
       // Дата
@@ -161,9 +168,12 @@ document.addEventListener("DOMContentLoaded", function () {
           checkedRadio++
         };
       });
-
-      console.log(checkedRadio);
       checkedRadio >= 1 ? isValid = true : isValid = false;
+
+    } else if (input.constructor.name == 'HTMLTextAreaElement') {
+      // Текстовое поле
+      let reg = /^(?=[а-яa-z0-9])[а-яa-z0-9\s]{1,4000}[а-яa-z0-9]$/i;
+      reg.test(input.value) ? isValid = true : isValid = false;
 
     } else {
       // Короткий текст (имя, фамилия и тд)
@@ -269,17 +279,152 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
+  // Инпут плейсхолдер
+  let placeholder = document.querySelectorAll('.placeholder');
 
-  // Инпут дата плейсхолдер
-  let datePlace = document.querySelector('.date');
+  if (placeholder) {
+    placeholder.forEach(placeholder => {
+      if (placeholder.querySelector('.input').value != '') {
+        placeholder.querySelector('.placeholder__text').remove();
+      } else {
+        placeholder.addEventListener('click', function () {
+          this.querySelector('.placeholder__text').remove();
+        });
+      };
+    });
+  };
 
-  if (datePlace) {
-    if (datePlace.querySelector('.input').value != '') {
-      datePlace.querySelector('.date__placeholder').remove();
-    } else {
-      datePlace.addEventListener('click', function () {
-        this.querySelector('.date__placeholder').remove();
+  // Прикрепление файла
+  // список файлов хранится в инпуте submit-files
+  let msgInput = document.querySelectorAll('.file__input');
+
+  if (msgInput) {
+    msgInput.forEach(input => {
+      let filesList = [];
+      let bottom = input.closest('.file');
+
+      // Функция проверки файлов. Если есть, скрываем кнопку "Прикрепить", иначе показываем
+      function checkFiles(bottom, files) {
+        if (files.length != 0) {
+          bottom.querySelector('.file__attach').style.display = 'none';
+        } else {
+          bottom.querySelector('.file__attach').style.display = 'block';
+        };
+      }
+
+      // Прикрепляем файлы к скрытому интпуту (для отправки формы через ajax)
+      function assignFiles(bottom, files) {
+        const fileInput = bottom.querySelector('.submit-files');
+        const dataTransfer = new DataTransfer();
+        files.forEach(file => {
+          dataTransfer.items.add(file);
+        });
+        fileInput.files = dataTransfer.files;
+      }
+
+      // Функция вывода списка файлов
+      function renderFileList(files, bottom) {
+        let filesWrapper = bottom.querySelector('.file__list');
+        filesWrapper.innerHTML = '';
+
+        // Показываем/Скрываем кнопку 
+        checkFiles(bottom, filesList);
+
+        //Проходимся по файлам
+        for (let i = 0; i < files.length; i++) {
+          // Создаем span, содержащий имя файла и кнопку удалить
+          let span = document.createElement('span');
+          span.classList.add('file__item');
+          span.innerHTML = files[i].name;
+
+          // Создаем кнопку (лучше оставить тег button, чтобы работало во всех браузерах норм)
+          let removeBtn = document.createElement('button');
+          removeBtn.setAttribute('type', 'button');
+          removeBtn.classList.add('file__remove-button');
+          removeBtn.insertAdjacentHTML('beforeend', `
+                    <svg class="file__remove-icon" fill="#47b200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20px" height="20px">
+                        <path d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"/>
+                    </svg>
+                `);
+
+          // Функция обработчик клика удаления файла 
+          function onRemoveButtonClick(e) {
+            e.preventDefault();
+            let fileHTML = this.closest('.file__item');
+            filesList = filesList.filter((f) =>
+            (
+              f.name !== files[i].name
+              // && f.lastModified !== files[i].lastModified
+            ));
+            fileHTML.remove();
+
+            // переприсваеваем файлы
+            checkFiles(bottom, filesList);
+            assignFiles(bottom, filesList);
+
+            removeBtn.removeEventListener('click', onRemoveButtonClick)
+          }
+
+
+          removeBtn.addEventListener('click', onRemoveButtonClick)
+
+
+          // Прикрепляем к форме
+          span.append(removeBtn);
+          filesWrapper.append(span)
+        };
+
+        // Инпут, хранящий все файлы
+        assignFiles(bottom, filesList);
+      };
+
+      input.addEventListener('click', (e) => {
+        e.target.value = '';
       });
-    };
+
+      input.addEventListener('change', (e) => {
+        let files = e.target.files;
+
+        Array.from(files).forEach(file => {
+          let foundFile = filesList.find(f => (
+            f.name === file.name
+            && f.lastModified === file.lastModified
+          ));
+          // добавляем только файлы с разными названиями
+          if (!foundFile) {
+            filesList.push(file);
+          }
+        });
+
+        renderFileList(filesList, bottom);
+      });
+    });
+  };
+
+  // Выбор адреса из списка
+  let searchItem = document.querySelectorAll('.search__item');
+
+  if (searchItem) {
+    searchItem.forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        let search = btn.closest('.address__form').querySelector('.search__input');
+        search.value = btn.textContent;
+        search.setAttribute('disabled', '');
+        search.closest('.search').classList.add('selected');
+      });
+    });
+  };
+
+  // Кнопка стереть в поиске
+  let removeBtn = document.querySelectorAll('.js-remove');
+
+  if (removeBtn) {
+    removeBtn.forEach(btn => {
+      btn.addEventListener('click', function () {
+        btn.closest('.search').classList.remove('selected');
+        btn.closest('.search').querySelector('.search__input').removeAttribute('disabled');
+        btn.closest('.search').querySelector('.search__input').value = '';
+      });
+    });
   };
 });

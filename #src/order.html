@@ -1,0 +1,196 @@
+@@include('include_html/header.html')
+
+<section class="container">
+  <a href="/korzinka/korzinka_mob/catalog.html" class="back">
+    <svg>
+      <use xlink:href="img/sprite.svg#arrowLeft"></use>
+    </svg>
+  </a>
+
+  <h2 class="section-title">Обратная связь</h2>
+
+  <form class="form order">
+    <span class="order__title">Покупатель</span>
+
+    <input type="text" class="input required" placeholder="Имя *">
+    <input type="email" class="input required" placeholder="E-mail *">
+    <label class="placeholder">
+      <input type="tel" class="input required">
+      <span class="placeholder__text">Телефон *</span>
+    </label>
+    <textarea class="input" placeholder="Комментарий"></textarea>
+
+    <span class="order__title">Способ доставки</span>
+
+    <div class="order__method order__method-personally active">
+      <button class="btn order__address-btn">САМОВЫВОЗ</button>
+
+      <div class="address-box">
+        <div class="address-box__inner">
+          <svg>
+            <use xlink:href="img/sprite.svg#location"></use>
+          </svg>
+          <span class="address-box__value">Липецк, ул. Ленина, 15</span>
+        </div>
+
+        <button type="button" class="address-box__btn">
+          Изменить
+        </button>
+      </div>
+    </div>
+
+    <div class="order__method order__method-delivery">
+      <button class="btn order__address-btn">ДОСТАВКА</button>
+
+      <div class="address-box">
+        <div class="address-box__inner">
+          <svg>
+            <use xlink:href="img/sprite.svg#location"></use>
+          </svg>
+          <span class="address-box__value">Липецк, ул. Ленина, 15</span>
+        </div>
+
+        <button type="button" class="address-box__btn">
+          Изменить
+        </button>
+      </div>
+
+      <span class="delivery__price">Стоимость доставки: 99 ₽</span>
+    </div>
+
+    <span class="order__title">Способ оплаты</span>
+
+    <div class="check">
+      <label class="check__label">
+        <input class="check__input required" type="radio" name="orderType" checked>
+        <span class="check__box">
+          <svg>
+            <use xlink:href="img/sprite.svg#selected"></use>
+          </svg>
+        </span>
+        Оплата онлайн
+      </label>
+    </div>
+
+    <button type="submit" class="btn btn__submit">ПЕРЕЙТИ К ОФОРМЛЕНИЮ</button>
+  </form>
+</section>
+
+<div class="modal address" style="display: block;" data-modal="cardNotFound">
+  <div class="modal__container">
+    <span class="modal__title">Укажите свой адрес</span>
+    <p class="modal__text">Чтобы видеть актуальную информацию по наличию товаров</p>
+
+    <div class="tabs">
+      <div class="tabs__btns">
+        <button class="tabs__btn delivery-btn active" data-tab="delivery">
+          <svg class="gray">
+            <use xlink:href="img/sprite.svg#deliveryGray"></use>
+          </svg>
+          <svg class="green">
+            <use xlink:href="img/sprite.svg#deliveryGreen"></use>
+          </svg>
+          Доставка
+        </button>
+
+        <button class="tabs__btn pickup-btn" data-tab="personally">
+          <svg class="gray">
+            <use xlink:href="img/sprite.svg#personallyGray"></use>
+          </svg>
+          <svg class="green">
+            <use xlink:href="img/sprite.svg#personallyGreen"></use>
+          </svg>
+          Самовывоз
+        </button>
+      </div>
+
+      <form class="form address__form tabs__item active" data-tab="delivery">
+        <div class="address__top">
+          <span class="address__text">Город, улица, дом</span>
+
+          <button class="address__define">
+            <svg>
+              <use xlink:href="img/sprite.svg#airplane"></use>
+            </svg>
+            Определить
+          </button>
+        </div>
+
+        <label class="search">
+          <input type="search" class="input search__input required" placeholder="Поиск">
+          <button type="submit" class="search__btn js-search">
+            <svg>
+              <use xlink:href="img/sprite.svg#search"></use>
+            </svg>
+          </button>
+
+          <button type="button" class="search__btn js-remove">
+            <svg>
+              <use xlink:href="img/sprite.svg#close"></use>
+            </svg>
+          </button>
+        </label>
+
+        <div class="separator"></div>
+
+        <div class="time">
+          <svg>
+            <use xlink:href="img/sprite.svg#deliveryGreen"></use>
+          </svg>
+
+          <div class="time__right">
+            <span class="time__title">Доставка сегодня, за 40 минут</span>
+            <span class="time__price">Стоимость доставки: 99 ₽</span>
+          </div>
+        </div>
+
+        <div class="address__bottom">
+          <button type="submit" class="btn btn__submit">ПОДТВЕРДИТЬ</button>
+          <button type="button" class="btn btn__cancel">ОТМЕНИТЬ</button>
+        </div>
+      </form>
+
+      <form class="form address__form tabs__item" data-tab="personally">
+        <div class="address__top">
+          <span class="address__text">Город, улица, дом</span>
+
+          <button class="address__define">
+            <svg>
+              <use xlink:href="img/sprite.svg#airplane"></use>
+            </svg>
+            Определить
+          </button>
+        </div>
+
+        <label class="search">
+          <input type="search" class="input search__input required" placeholder="Поиск">
+          <button type="submit" class="search__btn js-search">
+            <svg>
+              <use xlink:href="img/sprite.svg#search"></use>
+            </svg>
+          </button>
+
+          <button type="button" class="search__btn js-remove">
+            <svg>
+              <use xlink:href="img/sprite.svg#close"></use>
+            </svg>
+          </button>
+        </label>
+
+        <div class="search__list">
+          <div class="search__item">Панина, (2а Калининград)</div>
+          <div class="search__item">тест 1</div>
+          <div class="search__item">тест 2</div>
+          <div class="search__item">тест 3</div>
+        </div>
+
+        <div class="address__bottom">
+          <button type="submit" class="btn btn__submit">ПОДТВЕРДИТЬ</button>
+          <button type="button" class="btn btn__cancel">ОТМЕНИТЬ</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+@@include('include_html/footer.html')

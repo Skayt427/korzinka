@@ -1,0 +1,40 @@
+@@include('include_html/header.html')
+
+<section class="container">
+  <a href="/korzinka/korzinka_mob/personal.html" class="back">
+    <svg>
+      <use xlink:href="img/sprite.svg#arrowLeft"></use>
+    </svg>
+  </a>
+
+  <h2 class="section-title">Обратная связь</h2>
+
+  <form class="form">
+    <input type="text" class="input" placeholder="Имя">
+    <input type="text" class="input" placeholder="Фамилия">
+    <label class="placeholder">
+      <input type="tel" class="input required">
+      <span class="placeholder__text">Телефон *</span>
+    </label>
+    <input type="email" class="input required" placeholder="E-mail *">
+    <input type="text" class="input required" placeholder="Тема обращения">
+    <textarea class="input required" placeholder="Ввелите текст сообщения длиной не более 4000 символов *"></textarea>
+
+    <div class="file">
+      <label class="file__label">
+        <input class="file__input" type="file" multiple accept="image/*">
+        <svg class="file__pin">
+          <use xlink:href="img/sprite.svg#pin"></use>
+        </svg>
+        <span class="file__attach">Прикрепить файл</span>
+      </label>
+      <div class="file__list"></div>
+      <input class="submit-files" style="display: none;" type="file" multiple accept="image/*">
+    </div>
+
+    <button type="submit" class="btn btn__submit">отправить</button>
+  </form>
+
+</section>
+
+@@include('include_html/footer.html')
