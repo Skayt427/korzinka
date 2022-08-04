@@ -18,6 +18,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
+  if (document.querySelector('.card-detail__slider')) {
+    new Swiper('.card-detail__slider', {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+      },
+    });
+  };
+
   // Клик по кнопке В корзину у карточки
   let cardToCart = document.querySelectorAll('.card__tocart');
 
@@ -54,13 +66,21 @@ document.addEventListener("DOMContentLoaded", function () {
     let counterMinus = counter.querySelector('.counter__minus');
     let counterPlus = counter.querySelector('.counter__plus');
 
-    counterPlus.addEventListener('click', function () {
+    counterPlus.addEventListener('click', function (e) {
+      e.preventDefault();
       counterInput.value++;
     });
-    counterMinus.addEventListener('click', function () {
+    counterMinus.addEventListener('click', function (e) {
+      e.preventDefault();
       if (counterInput.value > 0) {
         counterInput.value--;
       }
+    });
+    counterInput.addEventListener('input', function (e) {
+      e.preventDefault();
+      if (counterInput.value < 0) {
+        counterInput.value = 0;
+      };
     });
   });
 
@@ -107,6 +127,9 @@ document.addEventListener("DOMContentLoaded", function () {
             // let cardNotFound = document.querySelector('[data-modal="cardNotFound"]');
             // showModal(cardNotFound, 'cardNotFound');
             // };
+          } else if (dataForm.classList.contains('card-detail__form')) {
+            dataForm.querySelector('.btn__submit').classList.add('added');
+            dataForm.querySelector('.btn__submit').innerHTML = 'В корзине';
           };
         };
       });
@@ -145,6 +168,10 @@ document.addEventListener("DOMContentLoaded", function () {
       let reg = /^[а-яА-Я\s.,()]+?\d+/i;
       reg.test(input.value) ? isValid = true : isValid = false;
 
+    } else if (input.querySelector('.counter__input')) {
+      // Счетчик
+      let reg = /^[0-9]$/;
+      reg.test(input.querySelector('.counter__input').value) ? isValid = true : isValid = false;
 
     } else if (input.getAttribute('type') == 'date') {
       // Дата
@@ -426,5 +453,48 @@ document.addEventListener("DOMContentLoaded", function () {
         btn.closest('.search').querySelector('.search__input').value = '';
       });
     });
+  };
+
+  // Переключатель
+  let switcherBtn = document.querySelectorAll('.switcher__item');
+
+  if (switcherBtn) {
+    switcherBtn.forEach(btn => {
+      btn.addEventListener('click', function () {
+        let activeBtn = document.querySelector('.switcher__item.active');
+
+        if (btn != activeBtn) {
+          activeBtn.classList.remove('active');
+          btn.classList.add('active');
+        };
+      });
+    });
+  };
+
+  // Удаление перетаскиванием
+  let draggableElems = document.querySelectorAll('.cart__inner');
+  if (draggableElems) {
+    let dragBreaker = document.querySelector('section');
+    let draggies = [];
+
+    for (let draggableElem of draggableElems) {
+      let draggie = new Draggabilly(draggableElem, {
+        axis: 'x',
+      });
+      draggies.push(draggie);
+
+      draggie.on('dragEnd', function () {
+        if (this.position.x <= -160) {
+          let item = this;
+          this.element.closest('.cart__item').style.transform = 'scale(0)';
+          window.setTimeout(function () {
+            item.element.closest('.cart__item').remove();
+          }, 100);
+
+        } else {
+          this.element.style.left = '0';
+        };
+      });
+    };
   };
 });

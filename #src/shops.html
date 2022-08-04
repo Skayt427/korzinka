@@ -1,0 +1,85 @@
+@@include('include_html/header.html')
+
+<section class="container shop">
+  <a href="/korzinka/korzinka_mob/index.html" class="back">
+    <svg>
+      <use xlink:href="img/sprite.svg#arrowLeft"></use>
+    </svg>
+  </a>
+
+  <h2 class="section-title">Магазины</h2>
+
+  <div class="tabs">
+    <div class="tabs__btns">
+      <button class="tabs__btn delivery-btn active" data-tab="list">
+        <svg class="gray">
+          <use xlink:href="img/sprite.svg#deliveryGray"></use>
+        </svg>
+        <svg class="green">
+          <use xlink:href="img/sprite.svg#deliveryGreen"></use>
+        </svg>
+        Списком
+      </button>
+
+      <button class="tabs__btn pickup-btn" data-tab="map">
+        <svg class="gray">
+          <use xlink:href="img/sprite.svg#personallyGray"></use>
+        </svg>
+        <svg class="green">
+          <use xlink:href="img/sprite.svg#personallyGreen"></use>
+        </svg>
+        На карте
+      </button>
+    </div>
+
+    <div class="shop__item tabs__item active" data-tab="list">
+      <ul class="map-list">
+        <li class="map-list__item">
+          <svg>
+            <use xlink:href="img/sprite.svg#mark"></use>
+          </svg>
+          <span class="map-list__box">
+            <span class="map-list__address">Липецк, ул. Ленина, 15</span>
+            <span class="map-list__time">с 08:00 до 23:00</span>
+          </span>
+        </li>
+
+        <li class="map-list__item">
+          <svg>
+            <use xlink:href="img/sprite.svg#mark"></use>
+          </svg>
+          <span class="map-list__box">
+            <span class="map-list__address">Липецк, ул. Ленина, 15</span>
+            <span class="map-list__time">с 08:00 до 23:00</span>
+          </span>
+        </li>
+
+        <li class="map-list__item">
+          <svg>
+            <use xlink:href="img/sprite.svg#mark"></use>
+          </svg>
+          <span class="map-list__box">
+            <span class="map-list__address">Липецк, ул. Ленина, 15</span>
+            <span class="map-list__time">с 08:00 до 23:00</span>
+          </span>
+        </li>
+
+        <li class="map-list__item">
+          <svg>
+            <use xlink:href="img/sprite.svg#mark"></use>
+          </svg>
+          <span class="map-list__box">
+            <span class="map-list__address">Липецк, ул. Ленина, 15</span>
+            <span class="map-list__time">с 08:00 до 23:00</span>
+          </span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="shop__item tabs__item" data-tab="map">
+      <div class="map"></div>
+    </div>
+  </div>
+</section>
+
+@@include('include_html/footer.html')

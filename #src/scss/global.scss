@@ -287,22 +287,54 @@ textarea.input {
   align-items: center;
   justify-content: space-between;
   border-radius: 8px;
+  padding: 0;
 
   & * {
     border: none;
   }
 
   &__input {
+    padding: 0;
+    height: 100%;
     background-color: transparent;
   }
 
   &__minus svg {
     width: 4px;
+    height: 6px;
   }
 
   &__plus svg {
     width: 6px;
     height: 6px;
+  }
+
+  &__small {
+    width: 64px;
+    height: 41px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: $color-black;
+    border: 1px solid #47B200;
+    border-radius: 8px;
+
+    .counter__input {
+      width: 20px;
+      text-align: center;
+    }
+
+    .counter__minus {
+      padding: 10px 4px 11px 13px;
+      height: 100%;
+      background-color: transparent;
+    }
+
+    .counter__plus {
+      padding: 10px 13px 11px 4px;
+      height: 100%;
+      background-color: transparent;
+    }
   }
 }
 
@@ -315,9 +347,9 @@ textarea.input {
   right: 0;
   z-index: 11;
   width: 100%;
-  height: 100%;
-  padding: 0 20px;
-  overflow-y: auto;
+  min-height: 100vh;
+  padding: 10vh 20px 10vh;
+  overflow-y: scroll;
 
   &__bg {
     position: absolute;
@@ -325,7 +357,7 @@ textarea.input {
     bottom: 0;
     left: 0;
     right: 0;
-    width: calc(100%);
+    width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
   }
@@ -335,13 +367,13 @@ textarea.input {
     z-index: 2;
     display: flex;
     flex-direction: column;
-    margin: 102px auto 10px;
+    max-width: 540px;
+    max-height: 80vh;
+    margin: 0 auto;
     padding: 16px;
     background-color: $color-white;
     border-radius: 8px;
-
-
-    border: 1px solid $color-black;
+    overflow-y: auto;
   }
 
   &__title {

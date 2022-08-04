@@ -23,7 +23,7 @@
     <span class="order__title">Способ доставки</span>
 
     <div class="order__method order__method-personally active">
-      <button class="btn order__address-btn">САМОВЫВОЗ</button>
+      <button type="button" class="btn order__address-btn" data-modal-trigger="address">САМОВЫВОЗ</button>
 
       <div class="address-box">
         <div class="address-box__inner">
@@ -33,14 +33,14 @@
           <span class="address-box__value">Липецк, ул. Ленина, 15</span>
         </div>
 
-        <button type="button" class="address-box__btn">
+        <button type="button" class="address-box__btn" data-modal-trigger="address">
           Изменить
         </button>
       </div>
     </div>
 
     <div class="order__method order__method-delivery">
-      <button class="btn order__address-btn">ДОСТАВКА</button>
+      <button type="button" class="btn order__address-btn" data-modal-trigger="address">ДОСТАВКА</button>
 
       <div class="address-box">
         <div class="address-box__inner">
@@ -50,7 +50,7 @@
           <span class="address-box__value">Липецк, ул. Ленина, 15</span>
         </div>
 
-        <button type="button" class="address-box__btn">
+        <button type="button" class="address-box__btn" data-modal-trigger="address">
           Изменить
         </button>
       </div>
@@ -76,7 +76,7 @@
   </form>
 </section>
 
-<div class="modal address" style="display: block;" data-modal="cardNotFound">
+<div class="modal address" data-modal="address">
   <div class="modal__container">
     <span class="modal__title">Укажите свой адрес</span>
     <p class="modal__text">Чтобы видеть актуальную информацию по наличию товаров</p>
@@ -182,6 +182,7 @@
           <div class="search__item">тест 1</div>
           <div class="search__item">тест 2</div>
           <div class="search__item">тест 3</div>
+          <div class="search__item">тест 4</div>
         </div>
 
         <div class="address__bottom">

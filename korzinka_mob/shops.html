@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/style.min.css">
+
+  <title>title</title>
+</head>
+
+<body>
+  <main class="main">
+    <!-- конец шапки -->
+
+<section class="container shop">
+  <a href="/korzinka/korzinka_mob/index.html" class="back">
+    <svg>
+      <use xlink:href="img/sprite.svg#arrowLeft"></use>
+    </svg>
+  </a>
+
+  <h2 class="section-title">Магазины</h2>
+
+  <div class="tabs">
+    <div class="tabs__btns">
+      <button class="tabs__btn delivery-btn active" data-tab="list">
+        <svg class="gray">
+          <use xlink:href="img/sprite.svg#deliveryGray"></use>
+        </svg>
+        <svg class="green">
+          <use xlink:href="img/sprite.svg#deliveryGreen"></use>
+        </svg>
+        Списком
+      </button>
+
+      <button class="tabs__btn pickup-btn" data-tab="map">
+        <svg class="gray">
+          <use xlink:href="img/sprite.svg#personallyGray"></use>
+        </svg>
+        <svg class="green">
+          <use xlink:href="img/sprite.svg#personallyGreen"></use>
+        </svg>
+        На карте
+      </button>
+    </div>
+
+    <div class="shop__item tabs__item active" data-tab="list">
+      <ul class="map-list">
+        <li class="map-list__item">
+          <svg>
+            <use xlink:href="img/sprite.svg#mark"></use>
+          </svg>
+          <span class="map-list__box">
+            <span class="map-list__address">Липецк, ул. Ленина, 15</span>
+            <span class="map-list__time">с 08:00 до 23:00</span>
+          </span>
+        </li>
+
+        <li class="map-list__item">
+          <svg>
+            <use xlink:href="img/sprite.svg#mark"></use>
+          </svg>
+          <span class="map-list__box">
+            <span class="map-list__address">Липецк, ул. Ленина, 15</span>
+            <span class="map-list__time">с 08:00 до 23:00</span>
+          </span>
+        </li>
+
+        <li class="map-list__item">
+          <svg>
+            <use xlink:href="img/sprite.svg#mark"></use>
+          </svg>
+          <span class="map-list__box">
+            <span class="map-list__address">Липецк, ул. Ленина, 15</span>
+            <span class="map-list__time">с 08:00 до 23:00</span>
+          </span>
+        </li>
+
+        <li class="map-list__item">
+          <svg>
+            <use xlink:href="img/sprite.svg#mark"></use>
+          </svg>
+          <span class="map-list__box">
+            <span class="map-list__address">Липецк, ул. Ленина, 15</span>
+            <span class="map-list__time">с 08:00 до 23:00</span>
+          </span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="shop__item tabs__item" data-tab="map">
+      <div class="map"></div>
+    </div>
+  </div>
+</section>
+
+<!-- начало подвала -->
+</main>
+
+<footer class="footer">
+  <div class="panel">
+    <a href="/korzinka/korzinka_mob/index.html" class="panel__item">
+      <span class="panel__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#main"></use>
+        </svg>
+      </span>
+      <span class="panel__title">Главная</span>
+    </a>
+
+    <a href="/korzinka/korzinka_mob/catalog.html" class="panel__item">
+      <span class="panel__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#catalog"></use>
+        </svg>
+      </span>
+      <span class="panel__title">каталог</span>
+    </a>
+
+    <a href="/" class="panel__item">
+      <span class="panel__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#bag"></use>
+        </svg>
+      </span>
+      <span class="panel__title">корзина</span>
+
+      <span class="panel__counter">3</span>
+    </a>
+
+    <a href="/" class="panel__item">
+      <span class="panel__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#shop"></use>
+        </svg>
+      </span>
+      <span class="panel__title">магазины</span>
+    </a>
+
+    <a href="/korzinka/korzinka_mob/personal.html" class="panel__item">
+      <span class="panel__icon">
+        <svg>
+          <use xlink:href="img/sprite.svg#profile"></use>
+        </svg>
+      </span>
+      <span class="panel__title">профиль</span>
+    </a>
+  </div>
+</footer>
+
+
+<script src="js/swiper-bundle.min.js"></script>
+<script src="js/inputmask.min.js"></script>
+<script src="js/draggabilly.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+
+</html>
