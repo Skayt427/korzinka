@@ -40,7 +40,7 @@
     <span class="order__title">Способ доставки</span>
 
     <div class="order__method order__method-personally active">
-      <button type="button" class="btn order__address-btn" data-modal-trigger="address">САМОВЫВОЗ</button>
+      <button type="button" class="btn order__address-btn" data-modal-trigger="address" data-active-window="personally">САМОВЫВОЗ</button>
 
       <div class="address-box">
         <div class="address-box__inner">
@@ -50,14 +50,14 @@
           <span class="address-box__value">Липецк, ул. Ленина, 15</span>
         </div>
 
-        <button type="button" class="address-box__btn" data-modal-trigger="address">
+        <button type="button" class="address-box__btn" data-modal-trigger="address" data-active-window="personally">
           Изменить
         </button>
       </div>
     </div>
 
     <div class="order__method order__method-delivery">
-      <button type="button" class="btn order__address-btn" data-modal-trigger="address">ДОСТАВКА</button>
+      <button type="button" class="btn order__address-btn" data-modal-trigger="address" data-active-window="delivery">ДОСТАВКА</button>
 
       <div class="address-box">
         <div class="address-box__inner">
@@ -67,7 +67,7 @@
           <span class="address-box__value">Липецк, ул. Ленина, 15</span>
         </div>
 
-        <button type="button" class="address-box__btn" data-modal-trigger="address">
+        <button type="button" class="address-box__btn" data-modal-trigger="address" data-active-window="delivery">
           Изменить
         </button>
       </div>
@@ -163,7 +163,7 @@
 
         <div class="address__bottom">
           <button type="submit" class="btn btn__submit">ПОДТВЕРДИТЬ</button>
-          <button type="button" class="btn btn__cancel">ОТМЕНИТЬ</button>
+          <button type="button" class="btn btn__cancel" data-modal-close>ОТМЕНИТЬ</button>
         </div>
       </form>
 
@@ -204,7 +204,7 @@
 
         <div class="address__bottom">
           <button type="submit" class="btn btn__submit">ПОДТВЕРДИТЬ</button>
-          <button type="button" class="btn btn__cancel">ОТМЕНИТЬ</button>
+          <button type="button" class="btn btn__cancel" data-modal-close>ОТМЕНИТЬ</button>
         </div>
       </form>
     </div>

@@ -193,8 +193,11 @@ textarea.input {
   &__label {
     display: flex;
     align-items: center;
-    margin-right: 54px;
     color: #7C756B;
+
+    &+.check__label {
+      margin-left: 40px;
+    }
   }
 
   &__input {

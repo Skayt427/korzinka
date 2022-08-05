@@ -262,12 +262,27 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       content = document.querySelector('[data-modal="' + id + '"]');
     }
+
     let modalBg = document.createElement('div');
     modalBg.classList.add('modal__bg');
 
     content.append(modalBg);
     content.style.display = 'block';
     body.classList.add('noscroll');
+
+
+    // Активный таб в модалке
+    if (btnTrigger.getAttribute('data-active-window')) {
+      let tabName = btnTrigger.getAttribute('data-active-window');
+      let tabItem = content.querySelectorAll('[data-tab]');
+      tabItem.forEach(item => {
+        if (tabName == item.getAttribute('data-tab')) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        };
+      });
+    };
 
     // Закрытие клик на Задний фон
     modalBg.addEventListener('click', function () {
@@ -461,7 +476,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (switcherBtn) {
     switcherBtn.forEach(btn => {
       btn.addEventListener('click', function () {
-        let activeBtn = document.querySelector('.switcher__item.active');
+        let activeBtn = btn.closest('.switcher').querySelector('.switcher__item.active');
 
         if (btn != activeBtn) {
           activeBtn.classList.remove('active');
@@ -474,11 +489,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Удаление перетаскиванием
   let draggableElems = document.querySelectorAll('.cart__inner');
   if (draggableElems) {
-    let dragBreaker = document.querySelector('section');
     let draggies = [];
 
     for (let draggableElem of draggableElems) {
       let draggie = new Draggabilly(draggableElem, {
+        handle: '.draggieHandle',
         axis: 'x',
       });
       draggies.push(draggie);

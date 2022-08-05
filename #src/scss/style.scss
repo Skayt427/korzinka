@@ -1409,6 +1409,7 @@
 }
 
 .qr {
+  margin-top: 32px;
   padding: 16px 16px 35px;
   background-color: #F9F9FA;
   border-radius: 8px;
@@ -1570,8 +1571,6 @@
     color: $color-green;
   }
 
-  &__slide {}
-
   &__wrapper {
     position: relative;
     display: flex;
@@ -1679,7 +1678,7 @@
 }
 
 .switcher {
-  display: flex;
+  display: inline-flex;
   width: fit-content;
   margin-top: 16px;
   background-color: #F9F9FA;
@@ -1717,8 +1716,6 @@
     margin-bottom: 13px;
   }
 
-  &__form {}
-
   &__item {
     width: 100%;
     overflow-x: hidden;
@@ -1727,10 +1724,25 @@
   }
 
   &__inner {
+    position: relative;
     display: flex;
     width: 100%;
     padding: 16px 0 16px 16px;
     transition: all linear 0.2s;
+  }
+
+  & .draggieHandle {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  & .undraggie {
+    position: relative;
+    z-index: 3;
   }
 
   &__img {
@@ -1750,6 +1762,7 @@
   }
 
   &__name {
+    display: block;
     font-size: 16px;
     line-height: 21px;
   }
@@ -1757,6 +1770,7 @@
   &__weight {
     display: block;
     margin-top: 4px;
+    padding-bottom: 16px;
     font-size: 12px;
     line-height: 16px;
     color: #D0D0D0;
@@ -1781,7 +1795,6 @@
     min-width: 1002px;
     max-width: 1002px;
     min-height: 100%;
-    // margin-left: 20px;
     padding-left: 14px;
     background-color: $color-red;
     border-radius: 8px 0px 0px 8px;
@@ -1802,5 +1815,58 @@
   .cart__right {
     min-width: calc(70% - 16px);
     max-width: calc(70% - 16px);
+  }
+}
+
+.preloader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: $color-green;
+
+  background-size: 210px 210px;
+  background-repeat: repeat;
+  animation: preloaderBg 20s linear infinite;
+
+  &__wrapper {
+    max-width: 334px;
+    padding: 20px;
+  }
+
+  &__logo {
+    width: 100%;
+
+  }
+
+  &__title {
+    display: inline-block;
+    margin-top: 32px;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 47px;
+    color: $color-white;
+  }
+}
+
+@media (max-width: 360px) {
+  .preloader__title {
+    font-size: 28px;
+    line-height: 38px;
+  }
+}
+
+@keyframes preloaderBg {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
   }
 }

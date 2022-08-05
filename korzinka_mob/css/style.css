@@ -253,8 +253,11 @@ textarea.input {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-right: 54px;
   color: #7C756B;
+}
+
+.check__label + .check__label {
+  margin-left: 40px;
 }
 
 .check__input {
@@ -2151,6 +2154,7 @@ textarea.input {
 }
 
 .qr {
+  margin-top: 32px;
   padding: 16px 16px 35px;
   background-color: #F9F9FA;
   border-radius: 8px;
@@ -2457,9 +2461,9 @@ textarea.input {
 }
 
 .switcher {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -2514,6 +2518,7 @@ textarea.input {
 }
 
 .cart__inner {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2522,6 +2527,20 @@ textarea.input {
   -webkit-transition: all linear 0.2s;
   -o-transition: all linear 0.2s;
   transition: all linear 0.2s;
+}
+
+.cart .draggieHandle {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cart .undraggie {
+  position: relative;
+  z-index: 3;
 }
 
 .cart__img {
@@ -2543,6 +2562,7 @@ textarea.input {
 }
 
 .cart__name {
+  display: block;
   font-size: 16px;
   line-height: 21px;
 }
@@ -2550,6 +2570,7 @@ textarea.input {
 .cart__weight {
   display: block;
   margin-top: 4px;
+  padding-bottom: 16px;
   font-size: 12px;
   line-height: 16px;
   color: #D0D0D0;
@@ -2592,6 +2613,71 @@ textarea.input {
   height: 22px;
 }
 
+.preloader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #47B200;
+  background-size: 210px 210px;
+  background-repeat: repeat;
+  -webkit-animation: preloaderBg 20s linear infinite;
+          animation: preloaderBg 20s linear infinite;
+}
+
+.preloader__wrapper {
+  max-width: 334px;
+  padding: 20px;
+}
+
+.preloader__logo {
+  width: 100%;
+}
+
+.preloader__title {
+  display: inline-block;
+  margin-top: 32px;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 47px;
+  color: #FFFFFF;
+}
+
+@-webkit-keyframes preloaderBg {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes preloaderBg {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 @media (min-width: 400px) {
   .order-detail__img {
     width: 50%;
@@ -2613,5 +2699,12 @@ textarea.input {
 @media (max-width: 380px) {
   .panel__title {
     font-size: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .preloader__title {
+    font-size: 28px;
+    line-height: 38px;
   }
 }
