@@ -1716,6 +1716,10 @@
     margin-bottom: 13px;
   }
 
+  &__wrapper {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  }
+
   &__item {
     width: 100%;
     overflow-x: hidden;
@@ -1803,6 +1807,11 @@
       width: 20px;
       height: 22px;
     }
+  }
+
+  &__btn {
+    width: 100%;
+    margin-top: 32px;
   }
 }
 

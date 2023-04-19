@@ -18,25 +18,25 @@
     <!-- конец шапки -->
 
 <section class="container">
-  <a href="/korzinka/korzinka_mob/index.html" class="back">
+  <a href="https://skayt427.github.io/korzinka/korzinka_mob/index.html" class="back">
     <svg>
       <use xlink:href="img/sprite.svg#arrowLeft"></use>
     </svg>
   </a>
 
   <!-- Если адреса нет -->
-  <!-- <div class="location">
+  <div class="location">
     <span class="location__title">Укажите свой адрес</span>
 
     <div class="location__box">
       <span class="location__text">Чтобы видеть актуальную информацию по наличию товаров</span>
     </div>
 
-    <button type="button" class="btn btn__submit location__btn">ВВЕСТИ АДРЕС</button>
-  </div> -->
+    <button type="button" class="btn btn__submit location__btn" data-modal-trigger="address" data-active-window="delivery">ВВЕСТИ АДРЕС</button>
+  </div>
 
   <!-- Если адрес есть -->
-  <div class="location">
+  <!-- <div class="location">
     <span class="location__title">Адрес</span>
 
     <div class="location__box">
@@ -49,8 +49,126 @@
     </div>
 
     <button type="button" class="btn btn__submit location__btn js-location-confirm">ПРОДОЛЖИТЬ</button>
-  </div>
+  </div> -->
 </section>
+
+<div class="modal address" data-modal="address">
+  <div class="modal__container">
+    <span class="modal__title">Укажите свой адрес</span>
+    <p class="modal__text">Чтобы видеть актуальную информацию по наличию товаров</p>
+
+    <div class="tabs">
+      <div class="tabs__btns">
+        <button class="tabs__btn delivery-btn active" data-tab="delivery">
+          <svg class="gray">
+            <use xlink:href="img/sprite.svg#deliveryGray"></use>
+          </svg>
+          <svg class="green">
+            <use xlink:href="img/sprite.svg#deliveryGreen"></use>
+          </svg>
+          Доставка
+        </button>
+
+        <button class="tabs__btn pickup-btn" data-tab="personally">
+          <svg class="gray">
+            <use xlink:href="img/sprite.svg#personallyGray"></use>
+          </svg>
+          <svg class="green">
+            <use xlink:href="img/sprite.svg#personallyGreen"></use>
+          </svg>
+          Самовывоз
+        </button>
+      </div>
+
+      <form class="form address__form tabs__item active" data-tab="delivery">
+        <div class="address__top">
+          <span class="address__text">Город, улица, дом</span>
+
+          <button class="address__define">
+            <svg>
+              <use xlink:href="img/sprite.svg#airplane"></use>
+            </svg>
+            Определить
+          </button>
+        </div>
+
+        <label class="search">
+          <input type="search" class="input search__input required" placeholder="Поиск">
+          <button type="submit" class="search__btn js-search">
+            <svg>
+              <use xlink:href="img/sprite.svg#search"></use>
+            </svg>
+          </button>
+
+          <button type="button" class="search__btn js-remove">
+            <svg>
+              <use xlink:href="img/sprite.svg#close"></use>
+            </svg>
+          </button>
+        </label>
+
+        <div class="separator"></div>
+
+        <div class="time">
+          <svg>
+            <use xlink:href="img/sprite.svg#deliveryGreen"></use>
+          </svg>
+
+          <div class="time__right">
+            <span class="time__title">Доставка сегодня, за 40 минут</span>
+            <span class="time__price">Стоимость доставки: 99 ₽</span>
+          </div>
+        </div>
+
+        <div class="address__bottom">
+          <button type="submit" class="btn btn__submit">ПОДТВЕРДИТЬ</button>
+          <button type="button" class="btn btn__cancel" data-modal-close>ОТМЕНИТЬ</button>
+        </div>
+      </form>
+
+      <form class="form address__form tabs__item" data-tab="personally">
+        <div class="address__top">
+          <span class="address__text">Город, улица, дом</span>
+
+          <button class="address__define">
+            <svg>
+              <use xlink:href="img/sprite.svg#airplane"></use>
+            </svg>
+            Определить
+          </button>
+        </div>
+
+        <label class="search">
+          <input type="search" class="input search__input required" placeholder="Поиск">
+          <button type="submit" class="search__btn js-search">
+            <svg>
+              <use xlink:href="img/sprite.svg#search"></use>
+            </svg>
+          </button>
+
+          <button type="button" class="search__btn js-remove">
+            <svg>
+              <use xlink:href="img/sprite.svg#close"></use>
+            </svg>
+          </button>
+        </label>
+
+        <div class="search__list">
+          <div class="search__item">Панина, (2а Калининград)</div>
+          <div class="search__item">тест 1</div>
+          <div class="search__item">тест 2</div>
+          <div class="search__item">тест 3</div>
+          <div class="search__item">тест 4</div>
+        </div>
+
+        <div class="address__bottom">
+          <button type="submit" class="btn btn__submit">ПОДТВЕРДИТЬ</button>
+          <button type="button" class="btn btn__cancel" data-modal-close>ОТМЕНИТЬ</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 <section class="container">
   <form class="search">
@@ -73,7 +191,7 @@
   <h2 class="section-title">Лучшие предложения</h2>
 
   <div class="card-wrapper">
-    <a class="card">
+    <a href="https://skayt427.github.io/korzinka/korzinka_mob/card-detail.html" class="card">
       <div class="banner">
         <span class="banner__item banner__discount">Акция</span>
         <span class="banner__item banner__discount-value">-33%</span>
@@ -90,7 +208,7 @@
       </div>
     </a>
 
-    <a class="card">
+    <a href="https://skayt427.github.io/korzinka/korzinka_mob/card-detail.html" class="card">
       <div class="banner">
         <span class="banner__item banner__discount">Акция</span>
         <span class="banner__item banner__discount-value">-33%</span>
@@ -113,28 +231,28 @@
   <h2 class="section-title">Категории</h2>
 
   <div class="category">
-    <a href="/korzinka/korzinka_mob/category.html" class="category__item" style="background: linear-gradient(45deg, #EDEDED 0%, #F5F5F5 100%);">
+    <a href="https://skayt427.github.io/korzinka/korzinka_mob/category-detail.html" class="category__item" style="background: linear-gradient(45deg, #EDEDED 0%, #F5F5F5 100%);">
       <div class="category__box">
         <img src="img/category-1.png" alt="" class="category__img">
       </div>
       <span class="category__title">МОЛОКО</span>
     </a>
 
-    <a href="/korzinka/korzinka_mob/category.html" class="category__item" style="background: linear-gradient(225deg, #FFF0F0 0%, #FFC2C2 100%);">
+    <a href="https://skayt427.github.io/korzinka/korzinka_mob/category-detail.html" class="category__item" style="background: linear-gradient(225deg, #FFF0F0 0%, #FFC2C2 100%);">
       <div class="category__box">
         <img src="img/category-2.png" alt="" class="category__img">
       </div>
       <span class="category__title">МОРОЖЕНОЕ</span>
     </a>
 
-    <a href="/korzinka/korzinka_mob/category.html" class="category__item" style="background: linear-gradient(225deg, #FFB7B5 0%, #E0808B 100%);">
+    <a href="https://skayt427.github.io/korzinka/korzinka_mob/category-detail.html" class="category__item" style="background: linear-gradient(225deg, #FFB7B5 0%, #E0808B 100%);">
       <div class="category__box">
         <img src="img/category-3.png" alt="" class="category__img">
       </div>
       <span class="category__title">МЯСО ГОВЯДИНЫ МЯСО ГОВЯДИНЫ</span>
     </a>
 
-    <a href="/korzinka/korzinka_mob/category.html" class="category__item" style="background: linear-gradient(45deg, #E9866F 0%, #FED7D8 100%);">
+    <a href="https://skayt427.github.io/korzinka/korzinka_mob/category-detail.html" class="category__item" style="background: linear-gradient(45deg, #E9866F 0%, #FED7D8 100%);">
       <div class="category__box">
         <img src="img/category-4.png" alt="" class="category__img">
       </div>
@@ -149,7 +267,7 @@
 
 <footer class="footer">
   <div class="panel">
-    <a href="/korzinka/korzinka_mob/index.html" class="panel__item">
+    <a href="https://skayt427.github.io/korzinka/korzinka_mob/index.html" class="panel__item">
       <span class="panel__icon">
         <svg>
           <use xlink:href="img/sprite.svg#main"></use>
@@ -158,7 +276,7 @@
       <span class="panel__title">Главная</span>
     </a>
 
-    <a href="/korzinka/korzinka_mob/catalog.html" class="panel__item">
+    <a href="https://skayt427.github.io/korzinka/korzinka_mob/catalog.html" class="panel__item">
       <span class="panel__icon">
         <svg>
           <use xlink:href="img/sprite.svg#catalog"></use>
@@ -167,7 +285,7 @@
       <span class="panel__title">каталог</span>
     </a>
 
-    <a href="/" class="panel__item">
+    <a href="https://skayt427.github.io/korzinka/korzinka_mob/cart.html" class="panel__item">
       <span class="panel__icon">
         <svg>
           <use xlink:href="img/sprite.svg#bag"></use>
@@ -178,7 +296,7 @@
       <span class="panel__counter">3</span>
     </a>
 
-    <a href="/" class="panel__item">
+    <a href="https://skayt427.github.io/korzinka/korzinka_mob/shops.html" class="panel__item">
       <span class="panel__icon">
         <svg>
           <use xlink:href="img/sprite.svg#shop"></use>
@@ -187,7 +305,7 @@
       <span class="panel__title">магазины</span>
     </a>
 
-    <a href="/korzinka/korzinka_mob/personal.html" class="panel__item">
+    <a href="https://skayt427.github.io/korzinka/korzinka_mob/personal.html" class="panel__item">
       <span class="panel__icon">
         <svg>
           <use xlink:href="img/sprite.svg#profile"></use>

@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
       let reg = /^[0-9]$/;
       reg.test(input.querySelector('.counter__input').value) ? isValid = true : isValid = false;
 
-    } else if (input.getAttribute('type') == 'date') {
+    } else if (input.classList.contains('date')) {
       // Дата
       if (input.value != '' && input.value.length == 10 && input.value > '1900-01-01' && input.value < '2020-01-01') {
         isValid = true;
